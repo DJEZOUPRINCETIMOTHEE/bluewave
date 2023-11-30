@@ -103,7 +103,7 @@ p {
   box-sizing: border-box;
   padding: 0 45px 0 15px;
   border: 0;
-  border: 0px solid #247ca1;
+  border: 0px solid #3498db;
   border-radius: 90px;
   background: #ffffff; }
 
@@ -231,7 +231,7 @@ img {
   font-weight: 600; }
 
 .readmore-btn:hover {
-  background-color: #247ca1; }
+  background-color: #3498db; }
 
 body .btn,
 body .btn-large {
@@ -252,7 +252,7 @@ body .btn.transparent {
 
 body .btn:hover {
   cursor: pointer;
-  background-color: #247ca1; }
+  background-color: #3498db; }
 
 .main-slider {
   margin-bottom: 0px; }
@@ -295,7 +295,7 @@ ul.pagination {
   text-align: center;
   height: 100%;
   position: fixed;
-  background: #247ca1;
+  background: #ffffff;
   z-index: 999999;
   top: 0px;
   display: table;
@@ -420,19 +420,19 @@ nav .side-nav li .collapsible-header {
 nav .side-nav li a,
 nav .side-nav li .collapsible-header {
   font-weight: 300;
-  border-bottom: 0px solid #247ca1;
+  border-bottom: 0px solid #3498db;
   line-height: normal;
   height: auto;
   display: block; }
 
 #nav-mobile-category li {
-  border-bottom: 0px solid #247ca1; }
+  border-bottom: 0px solid #3498db; }
 
 nav .side-nav.right-aligned li {
-  border-top: 1px solid #247ca1; }
+  border-top: 1px solid #3498db; }
 
 nav .side-nav.right-aligned li ul.sidenav-search-result li {
-  border-top: 0px solid #247ca1; }
+  border-top: 0px solid #3498db; }
 
 nav .side-nav.right-aligned li ul.sidenav-search-result li a:hover {
   background-color: transparent; }
@@ -450,7 +450,7 @@ nav .side-nav.right-aligned .populer-search .list-tag-word {
 
 nav .side-nav.right-aligned .populer-search .tag-word {
   margin-bottom: 5px;
-  background-color: #247ca1; }
+  background-color: #3498db; }
 
 nav .side-nav.right-aligned li ul.sidenav-search-result {
   padding: 15px 0px; }
@@ -1743,7 +1743,7 @@ form .file-field .file-path-wrapper .file-path {
   font-size: 12px; }
 
 .section.list-news .readmore:hover {
-  background-color: #247ca1; }
+  background-color: #3498db; }
 
 .section.list-news .more-news-list {
   text-align: right;
@@ -1979,7 +1979,7 @@ footer .wrap-circle-sosmed a {
 
 footer .footer-info {
   color: #ffffff;
-  border-bottom: 1px solid #247ca1;
+  border-bottom: 1px solid #3498db;
   padding: 35px 20px 35px; }
 
 footer .fas {
