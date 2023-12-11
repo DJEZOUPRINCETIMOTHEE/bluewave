@@ -60,22 +60,22 @@
 }
 
 /* Add Animation */
-@-webkit-keyframes w3slideIn {
+@-webkit-keyframes slideIn {
     from {bottom: -300px; opacity: 0} 
     to {bottom: 0; opacity: 1}
 }
 
-@keyframes w3slideIn {
+@keyframes slideIn {
     from {bottom: -300px; opacity: 0}
     to {bottom: 0; opacity: 1}
 }
 
-@-webkit-keyframes w3fadeIn {
+@-webkit-keyframes fadeIn {
     from {opacity: 0} 
     to {opacity: 1}
 }
 
-@keyframes w3fadeIn {
+@keyframes fadeIn {
     from {opacity: 0} 
     to {opacity: 1}
 }
