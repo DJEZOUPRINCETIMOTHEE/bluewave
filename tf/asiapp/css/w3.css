@@ -1,5 +1,5 @@
 /* The Modal (background) */
-.modal {
+.w3modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -13,11 +13,11 @@
     -webkit-animation-name: fadeIn; /* Fade in the background */
     -webkit-animation-duration: 0.4s;
     animation-name: fadeIn;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 
 /* Modal Content */
-.modal-content {
+.w3modal-content {
     position: fixed;
     bottom: 0;
     background-color: #fefefe;
@@ -25,55 +25,57 @@
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.4s;
     animation-name: slideIn;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 
 /* The Close Button */
-.close {
+.w3close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.w3close:hover,
+.w3close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-header {
+.w3modal-header {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.w3modal-body {
+    padding: 2px 16px;
+}
 
-.modal-footer {
+.w3modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
 }
 
 /* Add Animation */
-@-webkit-keyframes slideIn {
+@-webkit-keyframes w3slideIn {
     from {bottom: -300px; opacity: 0} 
     to {bottom: 0; opacity: 1}
 }
 
-@keyframes slideIn {
+@keyframes w3slideIn {
     from {bottom: -300px; opacity: 0}
     to {bottom: 0; opacity: 1}
 }
 
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes w3fadeIn {
     from {opacity: 0} 
     to {opacity: 1}
 }
 
-@keyframes fadeIn {
+@keyframes w3fadeIn {
     from {opacity: 0} 
     to {opacity: 1}
 }
