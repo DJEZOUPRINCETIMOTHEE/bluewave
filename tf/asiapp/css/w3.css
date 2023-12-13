@@ -18,7 +18,7 @@
 
 /* Modal Content */
 .w3modal-content {
-    position: fixed;
+    position: fixed; 
     bottom: 0;
     background-color: #fefefe;
     width: 100%;
