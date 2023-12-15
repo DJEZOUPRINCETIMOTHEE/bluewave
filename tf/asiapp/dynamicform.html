@@ -1,14 +1,11 @@
 
 <div class="row" x-data="handler()">
     <template x-for="(field, index) in fields" :key="index">
-     <tr>
-      <td x-text="index + 1"></td>
       <td><input x-model="field.txt1" type="text" name="txt1[]" class="form-control"></td>
       <td><input x-model="field.txt2" type="text" name="txt2[]" class="form-control"></td>
        <td><button type="button" class="btn btn-danger btn-small" @click="removeField(index)">&times;</button></td>
-    </tr>
    </template>
-       <td colspan="4" class="text-right"><button type="button" class="btn btn-info" @click="addNewField()">+ Add Row</button></td>
+   <button type="button" class="btn btn-info" @click="addNewField()">+ Add Row</button>
 </div>
 <script type="text/javascript">
   function handler() {
