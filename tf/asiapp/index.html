@@ -291,7 +291,12 @@
               <!-- CONTENT -->
               <div id="page-content">
                 <form>
-                  <div class="form-group">
+                  <div class="row" x-data="handler()">
+                      <template x-for="(field, index) in fields" :key="index">
+                        <td><input x-model="field.txt1" type="text" name="txt1[]" class="form-control"></td>
+                        <td><input x-model="field.txt2" type="text" name="txt2[]" class="form-control"></td>
+                         <td><button type="button" class="btn btn-danger btn-small" @click="removeField(index)">&times;</button></td>
+                        <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -305,6 +310,9 @@
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
+                     </template>
+                     <button type="button" class="btn btn-info" @click="addNewField()">+ Add Row</button>
+                  </div>
                 </form>
               </div>
               <!-- END CONTENT -->
@@ -466,5 +474,24 @@
 <script src="js/custom.js"></script>
 <!-- modal -->
 <script src="js/w3.js"></script>
+
+<script type="text/javascript">
+  function handler() {
+    return {
+      fields: [],
+      addNewField() {
+          this.fields.push({
+              txt1: '',
+              txt2: ''
+           });
+        },
+        removeField(index) {
+           this.fields.splice(index, 1);
+         }
+      }
+ }
+</script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+  
 </body>
 </html>
