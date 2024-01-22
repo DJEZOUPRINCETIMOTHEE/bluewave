@@ -67,12 +67,13 @@ p {
   text-align: justify; }
 
 .section-title {
-  color: #3498db;
+  color: #039be6;
   font-size: 18px;
   width: 100%;
   text-align: center;
   font-weight: 600;
-  padding-top: 10px; }
+  padding-top: 10px;
+  }
 
 .theme-secondary-color {
   color: #969696; }
@@ -592,8 +593,9 @@ header .header-icon-menu a {
 header .header-icon-menu .fas,
 header .header-icon-menu .far {
   font-size: 25px;
-  color: #3498db;
-  padding: 16px 0px; }
+  color: #009de3;
+  padding: 16px 0px;
+  }
 
 .header-menu-button a .fas {
   font-size: 25px; }
@@ -613,7 +615,7 @@ header .header-logo {
   left: 0px; }
 
 header .nav-logo {
-  color: #3498db;
+  color: #039be6;
   display: inline-block;
   font-size: 24px;
   font-weight: bold;
@@ -654,9 +656,10 @@ header .header-icon-menu.cart-item-wrap .cart-item {
   box-shadow: 1px 1px 0px 0px rgba(50, 50, 50, 0.59); }
 
 .header-menu-button a {
-  color: #3498db;
+  color: #039be6;
   margin: 0px 0px 0px 0px;
-  float: right; }
+  float: right;
+  }
 
 nav {
   background-color: #ffffff;
@@ -1972,7 +1975,8 @@ form .file-field .file-path-wrapper .file-path {
 22. FOOTER
 ==================================================*/
 footer {
-  background-color: #3498db; }
+  background-color: #039be6;
+  }
 
 footer .wrap-circle-sosmed a {
   color: #3498db; }

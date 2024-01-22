@@ -1,25 +1,31 @@
-// Get the modal
-var w3modal = document.getElementById('w3myModal');
+// Fonction pour configurer le modal
+function setupModal(modalId, btnId, closeClassName) {
+    // Récupérer le modal
+    var modal = document.getElementById(modalId);
 
-// Get the button that opens the modal
-var w3btn = document.getElementById("w3myBtn");
+    // Récupérer le bouton qui ouvre le modal
+    var btn = document.getElementById(btnId);
 
-// Get the <span> element that closes the modal
-var w3span = document.getElementsByClassName("w3close")[0];
+    // Récupérer l'élément <span> qui ferme le modal
+    var span = document.getElementsByClassName(closeClassName)[0];
 
-// When the user clicks the button, open the modal 
-w3btn.onclick = function() {
-    w3modal.style.display = "block";
+    // Quand l'utilisateur clique sur le bouton, ouvrir le modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    };
+
+    // Quand l'utilisateur clique sur <span> (x), fermer le modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    // Quand l'utilisateur clique n'importe où en dehors du modal, le fermer
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
 }
 
-// When the user clicks on <span> (x), close the modal
-w3span.onclick = function() {
-    w3modal.style.display = "none";
-}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == w3modal) {
-        w3modal.style.display = "none";
-    }
-}
+setupModal('w3myModal', 'w3myBtn', 'w3close');

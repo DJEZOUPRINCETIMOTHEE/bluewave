@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
 <!-- materialize icon -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="css/font-icon.css" rel="stylesheet">
 <!-- Owl carousel -->
 <link rel="stylesheet" href="lib/owlcarousel/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="lib/owlcarousel/assets/owl.theme.default.min.css">
@@ -280,7 +280,7 @@
                 </div>
               </div>
               <div class="wi-remove">
-                <a href="#"><i class="far fa-times-circle"></i></a>
+                <a href="checkout.html" style="font-size: 30px;">></a>
               </div>
               <div class="clear"></div>
             </div>
@@ -418,28 +418,30 @@
 </div>
 <!-- END CONTENT -->
 
-
- 
- 
-<!-- SUBSCRIBE -->
-<div class="section subscribe">
+<!-- PROMO -->
+<div class="section promo">
   <div class="container">
-    <div class="row">
+    <div class="col s12">
+      <img src="img/promo.jpg" alt="promo">
+    </div>
+  </div>
+</div>
+<!-- END PROMO -->
+
+<!-- FEATURED PRODUCT -->
+<div class="section product-item si-featured">
+  <div class="container">
+    <div class="row row-title">
       <div class="col s12">
-        <div class="section-title">SUBSCRIBE</div>
-        <p class="center">Get healthy news and solutions every day</p>
-        <div class="mail-subscribe-box">
-          <input class="form-control" name="user-email" placeholder="Enter email address" value="" type="email">
-          <i class="fa fa-angle-right"></i>
+        <div class="section-title">
+          <span class="theme-secondary-color">OUR</span> PRODUCTS
         </div>
       </div>
     </div>
   </div>
-  <div class="bg-subscribe">
-    <img src="img/bg-profile.jpg" alt="product">
-  </div>
 </div>
-<!-- END SUBSCRIBE -->
+<!-- END FEATURED PRODUCT -->
+
 <!-- FOOTER  -->
 <footer id="footer">
 <div class="container">
@@ -494,5 +496,8 @@
 <script src="lib/slick/slick/slick.min.js"></script>
 <!-- Custom script -->
 <script src="js/custom.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+  
 </body>
 </html>
