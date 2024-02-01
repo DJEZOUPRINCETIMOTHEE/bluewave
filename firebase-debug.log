@@ -1,0 +1,34 @@
+[debug] [2024-02-01T12:00:41.669Z] ----------------------------------------------------------------------
+[debug] [2024-02-01T12:00:41.671Z] Command:       /usr/local/share/nvm/versions/node/v20.11.0/bin/node /home/codespace/nvm/current/bin/firebase init
+[debug] [2024-02-01T12:00:41.672Z] CLI Version:   13.1.0
+[debug] [2024-02-01T12:00:41.672Z] Platform:      linux
+[debug] [2024-02-01T12:00:41.672Z] Node Version:  v20.11.0
+[debug] [2024-02-01T12:00:41.672Z] Time:          Thu Feb 01 2024 12:00:41 GMT+0000 (Coordinated Universal Time)
+[debug] [2024-02-01T12:00:41.672Z] Env Overrides: GITHUB_API_URL
+[debug] [2024-02-01T12:00:41.672Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-01T12:00:41.676Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-01T12:00:41.676Z] > authorizing via signed-in user (djezouprincetimothee@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /workspaces/bluewave
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
