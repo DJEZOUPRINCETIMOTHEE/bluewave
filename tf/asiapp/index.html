@@ -425,6 +425,8 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+  console.log(db);
 </script>
 
 <script src="js/jquery.min.js"></script>
