@@ -25,8 +25,25 @@
 <link rel="stylesheet" type="text/css" href="lib/slick/slick/slick-theme.css">
 <!-- Magnific Popup core CSS file -->
 <link rel="stylesheet" href="lib/Magnific-Popup-master/dist/magnific-popup.css">
+<!-- Inclure les scripts Firebase ici -->
+<script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"></script>
+<!-- Votre configuration Firebase ici -->
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
+    authDomain: "bluewave-cd31b.firebaseapp.com",
+    projectId: "bluewave-cd31b",
+    storageBucket: "bluewave-cd31b.appspot.com",
+    messagingSenderId: "529592430175",
+    appId: "1:529592430175:web:0b3804bc4935e6d49535ea",
+    measurementId: "G-JWPLLZQ9RB"
+  };
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+</script>
 </head>
-<body id="homepage">
+<body id="homepage" onload="ajouterElement()">
 <!-- BEGIN PRELOADING -->
 <div class="preloading">
   <div class="wrap-preload">
@@ -399,37 +416,16 @@
 <!-- END FOOTER -->
 <!-- Script -->
 <!-- Inclure ces scripts dans votre fichier HTML -->
-<script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"></script>
-
 <script>
-  // Configuration Firebase
-  var firebaseConfig = {
-    apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
-    authDomain: "bluewave-cd31b.firebaseapp.com",
-    projectId: "bluewave-cd31b",
-    storageBucket: "bluewave-cd31b.appspot.com",
-    messagingSenderId: "529592430175",
-    appId: "1:529592430175:web:0b3804bc4935e6d49535ea",
-    measurementId: "G-JWPLLZQ9RB"
-  };
-
-  // Initialisation Firebase
-  firebase.initializeApp(firebaseConfig);
-  var db = firebase.firestore();
-</script>
-
-<script>
-  // Ajouter un élément à la base de données
   function ajouterElement() {
-    var maCollection = db.collection("Category");
-
+    var maCollection = db.collection("nomDeVotreCollection");
+  
     // Les données que vous souhaitez enregistrer
     var donnees = {
       champ1: "valeur1",
       champ2: "valeur2",
     };
-
+  
     // Ajouter le document à la collection
     maCollection.add(donnees)
       .then(function(docRef) {
@@ -439,9 +435,6 @@
         console.error("Erreur lors de l'ajout du document :", error);
       });
   }
-
-  // Appeler la fonction pour ajouter l'élément
-  ajouterElement();
 </script>
 
 <script src="js/jquery.min.js"></script>
