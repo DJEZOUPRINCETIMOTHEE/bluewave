@@ -26,8 +26,28 @@
 <!-- Magnific Popup core CSS file -->
 <link rel="stylesheet" href="lib/Magnific-Popup-master/dist/magnific-popup.css">
 <!-- Inclure les scripts Firebase ici -->
+<!-- Inclure ces scripts dans votre fichier HTML -->
 <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"></script>
+
+<script>
+  // Configuration Firebase
+  var firebaseConfig = {
+    apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
+    authDomain: "bluewave-cd31b.firebaseapp.com",
+    projectId: "bluewave-cd31b",
+    storageBucket: "bluewave-cd31b.appspot.com",
+    messagingSenderId: "529592430175",
+    appId: "1:529592430175:web:0b3804bc4935e6d49535ea",
+    measurementId: "G-JWPLLZQ9RB"
+  };
+
+  // Initialisation Firebase
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+  console.log(db);
+</script>
+
 </head>
 <body id="homepage">
 <!-- BEGIN PRELOADING -->
@@ -402,32 +422,6 @@
 <!-- END FOOTER -->
 <!-- Script -->
 <!-- Inclure ces scripts dans votre fichier HTML -->
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
-    authDomain: "bluewave-cd31b.firebaseapp.com",
-    databaseURL: "https://bluewave-cd31b-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "bluewave-cd31b",
-    storageBucket: "bluewave-cd31b.appspot.com",
-    messagingSenderId: "529592430175",
-    appId: "1:529592430175:web:0b3804bc4935e6d49535ea",
-    measurementId: "G-JWPLLZQ9RB"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const db = getFirestore(app);
-  console.log(app);
-</script>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/materialize.min.js"></script>
