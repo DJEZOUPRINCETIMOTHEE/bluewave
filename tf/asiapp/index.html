@@ -398,50 +398,52 @@
 </footer>
 <!-- END FOOTER -->
 <!-- Script -->
-  <script type="module">
-  // Importer les modules nécessaires
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
+<!-- Inclure ces scripts dans votre fichier HTML -->
+<script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js"></script>
 
-// Configuration Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
-  authDomain: "bluewave-cd31b.firebaseapp.com",
-  projectId: "bluewave-cd31b",
-  storageBucket: "bluewave-cd31b.appspot.com",
-  messagingSenderId: "529592430175",
-  appId: "1:529592430175:web:0b3804bc4935e6d49535ea",
-  measurementId: "G-JWPLLZQ9RB"
-};
+<script>
+  // Configuration Firebase
+  var firebaseConfig = {
+    apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
+    authDomain: "bluewave-cd31b.firebaseapp.com",
+    projectId: "bluewave-cd31b",
+    storageBucket: "bluewave-cd31b.appspot.com",
+    messagingSenderId: "529592430175",
+    appId: "1:529592430175:web:0b3804bc4935e6d49535ea",
+    measurementId: "G-JWPLLZQ9RB"
+  };
 
-// Initialiser Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+  // Initialisation Firebase
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+</script>
 
-// Ajouter un document à une collection
-const ajouterElement = async () => {
-  try {
-    const maCollection = collection(db, "nomDeVotreCollection");
-    
+<script>
+  // Ajouter un élément à la base de données
+  function ajouterElement() {
+    var maCollection = db.collection("nomDeVotreCollection");
+
     // Les données que vous souhaitez enregistrer
-    const donnees = {
+    var donnees = {
       champ1: "valeur1",
       champ2: "valeur2",
     };
 
     // Ajouter le document à la collection
-    const docRef = await addDoc(maCollection, donnees);
-
-    console.log("Document ajouté avec l'ID :", docRef.id);
-  } catch (error) {
-    console.error("Erreur lors de l'ajout du document :", error);
+    maCollection.add(donnees)
+      .then(function(docRef) {
+        console.log("Document ajouté avec l'ID :", docRef.id);
+      })
+      .catch(function(error) {
+        console.error("Erreur lors de l'ajout du document :", error);
+      });
   }
-};
 
-// Appeler la fonction pour ajouter l'élément
-ajouterElement();
-
+  // Appeler la fonction pour ajouter l'élément
+  ajouterElement();
 </script>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/materialize.min.js"></script>
 <!-- Owl carousel -->
