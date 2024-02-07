@@ -27,11 +27,12 @@
 <link rel="stylesheet" href="lib/Magnific-Popup-master/dist/magnific-popup.css">
 <!-- Inclure les scripts Firebase ici -->
 <!-- Inclure ces scripts dans votre fichier HTML -->
+<!-- Inclure les scripts Firebase ici -->
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
 
+<!-- Configuration Firebase -->
 <script>
-  // Configuration Firebase
   var firebaseConfig = {
     apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
     authDomain: "bluewave-cd31b.firebaseapp.com",
@@ -42,10 +43,10 @@
     measurementId: "G-JWPLLZQ9RB"
   };
 
-  // Initialisation Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  var db = firebase.firestore();
+  // Initialiser Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const analytics = firebase.getAnalytics(app);
+  const db = firebase.firestore();
   console.log(db);
 </script>
 
