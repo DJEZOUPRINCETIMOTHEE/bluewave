@@ -28,14 +28,19 @@
 <!-- Inclure les scripts Firebase ici -->
 <!-- Inclure ces scripts dans votre fichier HTML -->
 <!-- Inclure les scripts Firebase ici -->
-<script type="module" src="js/firebase-app.js"></script>
-<script type="module" src="js/firebase-firestore.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-<!-- Configuration Firebase -->
-<script>
-  var firebaseConfig = {
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
     apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
     authDomain: "bluewave-cd31b.firebaseapp.com",
+    databaseURL: "https://bluewave-cd31b-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "bluewave-cd31b",
     storageBucket: "bluewave-cd31b.appspot.com",
     messagingSenderId: "529592430175",
@@ -43,13 +48,10 @@
     measurementId: "G-JWPLLZQ9RB"
   };
 
-  // Initialiser Firebase
+  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-  const db = firestore();
-  console.log(db);
 </script>
-
 </head>
 <body id="homepage">
 <!-- BEGIN PRELOADING -->
