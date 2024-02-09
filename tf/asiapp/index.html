@@ -441,6 +441,28 @@
 <script src="js/w3.js"></script>
 
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+// Référence à la base de données
+const db = getDatabase();
+
+// Référence à un emplacement spécifique dans la base de données
+const dataRef = ref(db, '/');
+
+// Récupérer les données de cet emplacement
+get(dataRef).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log("Données récupérées avec succès :", snapshot.val());
+  } else {
+    console.log("Aucune donnée disponible à cet emplacement.");
+  }
+}).catch((error) => {
+  console.error("Erreur lors de la récupération des données :", error);
+});
+
+</script>
   
 </body>
 </html>
