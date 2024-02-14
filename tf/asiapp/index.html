@@ -53,7 +53,7 @@
   const analytics = getAnalytics(app);
   // Obtenez une référence à la collection "category"
   const db = getFirestore(app);
-  const categoryCollection = collection(db, 'Category');
+  const categoryCollection = collection(db, 'category');
   
   // Récupérez les documents de la collection "category"
   const getData = async () => {
