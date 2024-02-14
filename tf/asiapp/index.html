@@ -29,9 +29,9 @@
 <!-- Inclure ces scripts dans votre fichier HTML -->
 <!-- Inclure les scripts Firebase ici -->
 <script type="module">
-  // Importez les modules Firebase nécessaires
+// Importez les modules Firebase nécessaires
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 // Configuration Firebase
 const firebaseConfig = {
@@ -49,7 +49,7 @@ const app = initializeApp(firebaseConfig);
 
 // Obtenez une référence à la collection "category"
 const db = getFirestore(app);
-const categoryCollection = collection(db, 'Category');
+const categoryCollection = collection(db, 'category');
 
 // Récupérez les documents de la collection "category"
 const getData = async () => {
@@ -64,9 +64,29 @@ const getData = async () => {
   }
 };
 
+// Ajoutez des données à la collection "category"
+const addData = async (data) => {
+  try {
+    const docRef = await addDoc(categoryCollection, data);
+    console.log("Document ajouté avec l'ID:", docRef.id);
+  } catch (error) {
+    console.error("Erreur lors de l'ajout des données:", error);
+  }
+};
+
+// Exemple d'ajout de données
+const newData = {
+  name: "Nouvelle Catégorie",
+  description: "Description de la nouvelle catégorie",
+  // ... autres champs
+};
+
+// Appelez la fonction pour ajouter des données
+addData(newData);
+
 // Appelez la fonction pour récupérer les données
 getData();
-console.log(getData())
+
 </script>
 </head>
 <body id="homepage">
