@@ -49,7 +49,7 @@ const app = initializeApp(firebaseConfig);
 
 // Obtenez une référence à la collection "category"
 const db = getFirestore(app);
-const categoryCollection = collection(db, 'category');
+const categoryCollection = collection(db, 'Category');
 
 // Récupérez les documents de la collection "category"
 const getData = async () => {
