@@ -449,7 +449,7 @@ import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.8.0
 const db = getDatabase();
 
 // Référence à un emplacement spécifique dans la base de données
-const dataRef = ref(db, 'Category');
+const dataRef = ref(db, '/Category');
 
 // Récupérer les données de cet emplacement
 get(dataRef).then((snapshot) => {
