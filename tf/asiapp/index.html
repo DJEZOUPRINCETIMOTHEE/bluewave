@@ -445,22 +445,21 @@
   // Import the functions you need from the SDKs
   import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-  // Référence à la base de données
-  const db = getDatabase();
+  // Obtenez une référence à la collection "category"
+const db = getFirestore(app);
+const categoryCollection = collection(db, 'Category');
 
-  // Référence à un emplacement spécifique dans la base de données
-  const dataRef = ref(db, '/Category');
-
-  // Récupérer les données de cet emplacement
-  get(dataRef).then((snapshot) => {
-    if (snapshot.exists()) {
-      console.log("Données récupérées avec succès :", snapshot.val());
-    } else {
-      console.log("Aucune donnée disponible à cet emplacement.");
-    }
-  }).catch((error) => {
-    console.error("Erreur lors de la récupération des données :", error);
+// Récupérez les documents de la collection "category"
+const getData = async () => {
+  const querySnapshot = await getDocs(categoryCollection);
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+    // Vous pouvez manipuler les données ici
   });
+};
+
+// Appelez la fonction pour récupérer les données
+getData();
 </script>
 
   
