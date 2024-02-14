@@ -51,6 +51,21 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+  // Obtenez une référence à la collection "category"
+  const db = getFirestore(app);
+  const categoryCollection = collection(db, 'Category');
+  
+  // Récupérez les documents de la collection "category"
+  const getData = async () => {
+    const querySnapshot = await getDocs(categoryCollection);
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+      // Vous pouvez manipuler les données ici
+    });
+  };
+  
+  // Appelez la fonction pour récupérer les données
+  getData();
 </script>
 </head>
 <body id="homepage">
@@ -439,29 +454,6 @@
 <script src="js/custom.js"></script>
 <!-- modal -->
 <script src="js/w3.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-<script type="module">
-  // Import the functions you need from the SDKs
-  import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-
-  // Obtenez une référence à la collection "category"
-const db = getFirestore(app);
-const categoryCollection = collection(db, 'Category');
-
-// Récupérez les documents de la collection "category"
-const getData = async () => {
-  const querySnapshot = await getDocs(categoryCollection);
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
-    // Vous pouvez manipuler les données ici
-  });
-};
-
-// Appelez la fonction pour récupérer les données
-getData();
-</script>
-
-  
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>  
 </body>
 </html>
