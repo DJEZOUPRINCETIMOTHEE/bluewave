@@ -440,40 +440,39 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const categoryCollection = collection(db, 'category');
 
-// Récupérez les documents de la collection "category"
 const getData = async () => {
-  try {
-    const querySnapshot = await getDocs(categoryCollection);
-    querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
-      // Vous pouvez manipuler les données ici
-    });
-  } catch (error) {
-    console.error("Erreur lors de la récupération des données:", error);
-  }
-};
-/*
-// Ajoutez des données à la collection "category"
-const addData = async (data) => {
-  try {
-    const docRef = await addDoc(categoryCollection, data);
-    console.log("Document ajouté avec l'ID:", docRef.id);
-  } catch (error) {
-    console.error("Erreur lors de l'ajout des données:", error);
-  }
+  // Étape 1 : Définir les variables
+  var contenuTitre;
+  var contenuImage;
+
+  // Étape 2 : Exécuter une requête pour obtenir les documents
+  const querySnapshot = await getDocs(categoryCollection);
+
+  // Étape 3 : Parcourir chaque document
+  querySnapshot.forEach((doc) => {
+    // Récupérer les valeurs des champs
+    contenuTitre = doc.data().nom;
+    contenuImage = doc.data().image;
+
+    // Étape 4 : Remplacer les étoiles dans le code
+    var codeHtml = `<div class="col s4 m4 l2">
+        <a class="icon-content" id="w3myBtn" onclick="ajouterElement()" >
+        <div class="content fadetransition">
+          <div class="in-content">
+            <div class="in-in-content">
+              <img src="${contenuImage}" alt="category">
+              <h5>${contenuTitre}</h5>
+            </div>
+          </div>
+        </div>
+      </a>
+      </div>`;
+
+    // Étape 5 : Insérer le code HTML dans la page
+    document.getElementById("contenu").innerHTML += codeHtml;
+  });
 };
 
-// Exemple d'ajout de données
-const newData = {
-  name: "Nouvelle Catégorie",
-  description: "Description de la nouvelle catégorie",
-  // ... autres champs
-};
-
-// Appelez la fonction pour ajouter des données
-addData(newData);
-*/
-// Appelez la fonction pour récupérer les données
 getData();
 
 </script>
