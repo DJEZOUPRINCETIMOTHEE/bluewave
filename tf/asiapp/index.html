@@ -28,26 +28,7 @@
 <!-- Inclure les scripts Firebase ici -->
 <!-- Inclure ces scripts dans votre fichier HTML -->
 <!-- Inclure les scripts Firebase ici -->
-<script type="module">
-// Importez les modules Firebase nécessaires
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-// Configuration Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
-  authDomain: "bluewave-cd31b.firebaseapp.com",
-  projectId: "bluewave-cd31b",
-  storageBucket: "bluewave-cd31b.appspot.com",
-  messagingSenderId: "529592430175",
-  appId: "1:529592430175:web:0b3804bc4935e6d49535ea",
-  measurementId: "G-JWPLLZQ9RB"
-};
-
-// Initialisez Firebase avec votre configuration
-const app = initializeApp(firebaseConfig);
-  
-</script>
 </head>
 <body id="homepage">
 <!-- BEGIN PRELOADING -->
@@ -437,7 +418,24 @@ const app = initializeApp(firebaseConfig);
 
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script> 
 <script type="module">
+// Importez les modules Firebase nécessaires
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
+// Configuration Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
+  authDomain: "bluewave-cd31b.firebaseapp.com",
+  projectId: "bluewave-cd31b",
+  storageBucket: "bluewave-cd31b.appspot.com",
+  messagingSenderId: "529592430175",
+  appId: "1:529592430175:web:0b3804bc4935e6d49535ea",
+  measurementId: "G-JWPLLZQ9RB"
+};
+
+// Initialisez Firebase avec votre configuration
+const app = initializeApp(firebaseConfig);
+  
 // Obtenez une référence à la collection "category"
 const db = getFirestore(app);
 const categoryCollection = collection(db, 'category');
