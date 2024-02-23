@@ -262,7 +262,7 @@
         </div>
       </div>
       <div class="row">
-        <form class="col s12">
+        <div class="col s12">
           <div class="row">
             <div class="input-field col s12 m6 l4 offset-m3 offset-l4">
               <input class="validate" type="tel" id="phone-number" placeholder="Votre numéro de téléphone">
@@ -277,9 +277,9 @@
           </div>
           <div class="row">
             <div class="input-field col s12 m6 l4 offset-m3 offset-l4 center">
-              <input class="waves-effect waves-light btn" value="LOG IN" type="submit"></div>
+              <input class="waves-effect waves-light btn" value="LOG IN" onclick="authenticateWithPhone(document.getElementById('phone-number').value) type="submit"></div>
           </div>
-        </form>
+        </div>
       </div>
       <div class="row fp-text">
         <div class="col s12">
@@ -394,5 +394,49 @@
 <script src="lib/slick/slick/slick.min.js"></script>
 <!-- Custom script -->
 <script src="js/custom.js"></script>
+<script type="module">
+// Importez les modules Firebase nécessaires
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+// Configuration Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyC2Cia_tYJkPozj4OI7L7lVqau7NoX327g",
+  authDomain: "bluewave-cd31b.firebaseapp.com",
+  projectId: "bluewave-cd31b",
+  storageBucket: "bluewave-cd31b.appspot.com",
+  messagingSenderId: "529592430175",
+  appId: "1:529592430175:web:0b3804bc4935e6d49535ea",
+  measurementId: "G-JWPLLZQ9RB"
+};
+
+// Initialisez Firebase avec votre configuration
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+  
+async function authenticateWithPhone(phoneNumber) {
+  try {
+    const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, recaptchaVerifier);
+    // Envoyer le code de confirmation à l'utilisateur
+    console.log("Code de confirmation envoyé !");
+
+    // Fonction pour valider le code de confirmation
+    async function verifyCode(verificationCode) {
+      try {
+        const result = await confirmationResult.confirm(verificationCode);
+        // L'utilisateur est authentifié
+        console.log("Authentification réussie !");
+      } catch (error) {
+        // Gérer les erreurs de validation du code
+        console.error("Échec de la validation du code:", error.message);
+      }
+    }
+  } catch (error) {
+    // Gérer les erreurs d'authentification
+    console.error("Échec de l'authentification:", error.message);
+  }
+}
+
+</script>
 </body>
 </html>
