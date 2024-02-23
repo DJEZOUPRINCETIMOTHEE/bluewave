@@ -396,8 +396,10 @@
 <script src="js/custom.js"></script>
 <script type="module">
 // Importez les modules Firebase nécessaires
+// Importez les modules Firebase nécessaires
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
 
 // Configuration Firebase
 const firebaseConfig = {
