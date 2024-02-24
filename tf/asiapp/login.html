@@ -277,7 +277,7 @@
           </div>
           <div class="row">
             <div class="input-field col s12 m6 l4 offset-m3 offset-l4 center">
-              <input class="waves-effect waves-light btn" value="LOG IN" onclick="authenticateWithPhone(document.getElementById('phone-number').value)" type="submit"></div>
+              <input class="waves-effect waves-light btn" value="LOG IN" id="subit" type="submit"></div>
           </div>
         </div>
       </div>
@@ -438,7 +438,10 @@ async function authenticateWithPhone(phoneNumber) {
     console.error("Échec de l'authentification:", error.message);
   }
 }
-
+// Ajoute l'écouteur d'événement onclick au bouton
+document.getElementById("submit").onclick = function() {
+  authenticateWithPhone(document.getElementById('phone-number').value);
+};
 </script>
 </body>
 </html>
