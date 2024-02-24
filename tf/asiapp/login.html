@@ -418,6 +418,15 @@ const auth = getAuth(app);
   
 async function authenticateWithPhone(phoneNumber) {
   try {
+    
+    // Définir le reCAPTCHA
+    const recaptchaVerifier = new RecaptchaVerifier("recaptcha-container", {
+      size: "invisible",
+      callback: (response) => {
+        // reCAPTCHA token est disponible
+      },
+    });
+    
     const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, recaptchaVerifier);
     // Envoyer le code de confirmation à l'utilisateur
     console.log("Code de confirmation envoyé !");
