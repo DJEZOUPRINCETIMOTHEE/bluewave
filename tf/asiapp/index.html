@@ -40,28 +40,7 @@
 </div>
 <!-- END PRELOADING -->
 <!-- HEADER -->
-<header id="header">
-<div class="nav-wrapper container">
-
-
-   <div class="header-menu-button">
-    <a href="#" data-activates="nav-mobile-category" class="button-collapse" id="button-collapse-category">
-    <div class="cst-btn-menu">
-      <i class="fas fa-align-left"></i>
-    </div>
-    </a>
-  </div>
-  <div class="header-logo">
-    <a href="#" class="nav-logo">Asiapp</a>
-  </div>
-     <div class="header-icon-menu">
-    <a href="#" data-activates="nav-mobile-account" class="button-collapse" id="button-collapse-account"><i class="fas fa-search"></i></a>
-  </div>
- 
- 
-  
-</div>
-</header>
+<header id="header"></header>
 <!-- END HEADER -->
 <!-- SIDE NAV-->
 <nav>
@@ -359,47 +338,7 @@
 <!-- END FEATURED PRODUCT -->
 
 <!-- FOOTER  -->
-<footer id="footer">
-<div class="container">
-  <div class="row row-footer-icon">
-    <div class="col s12">
-      <div class="footer-sosmed-icon ">
-        <div class="wrap-circle-sosmed ">
-          <a href="#">
-          <div class="circle-sosmed">
-            <i class="fab fa-instagram"></i>
-          </div>
-          </a>
-        </div>
-        <div class="wrap-circle-sosmed ">
-          <a href="#">
-          <div class="circle-sosmed">
-            <i class="fab fa-linkedin-in"></i>
-          </div>
-          </a>
-        </div>
-        <div class="wrap-circle-sosmed ">
-          <a href="#">
-          <div class="circle-sosmed">
-            <i class="fab fa-twitter"></i>
-          </div>
-          </a>
-        </div>
-        <div class="wrap-circle-sosmed ">
-          <a href="#">
-          <div class="circle-sosmed">
-            <i class="fab fa-facebook-f"></i>
-          </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row copyright">
-     2024 <span>Asiapp</span>, All rights reserved.
-  </div>
-</div>
-</footer>
+<footer id="footer"></footer>
 <!-- END FOOTER -->
 <!-- Script -->
 <!-- Inclure ces scripts dans votre fichier HTML -->
@@ -474,6 +413,12 @@ const getData = async () => {
 };
 
 getData();
+
+const headerHtml = await fetch('header.html').then(response => response.text());
+const footerHtml = await fetch('footer.html').then(response => response.text());
+
+document.getElementById('header').innerHTML = headerHtml;
+document.getElementById('footer').innerHTML = footerHtml;
 
 </script>
 
