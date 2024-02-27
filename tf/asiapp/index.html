@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head id="head"></head>
+<script type="module">
+const headHtml = await fetch('head.html').then(response => response.text());
+document.getElementById('head').innerHTML = headHtml;
+</script>
 <body id="homepage">
 <!-- BEGIN PRELOADING -->
 <div class="preloading">
@@ -12,9 +16,17 @@
 <!-- END PRELOADING -->
 <!-- HEADER -->
 <header id="header"></header>
+<script type="module">
+const headerHtml = await fetch('header.html').then(response => response.text());
+document.getElementById('header').innerHTML = headerHtml;
+</script>
 <!-- END HEADER -->
 <!-- SIDE NAV-->
 <nav id="nav"></nav>
+<script type="module">
+const navHtml = await fetch('nav.html').then(response => response.text());
+document.getElementById('nav').innerHTML = navHtml;
+</script>
 <!-- END SIDENAV-->
 <!-- MAIN SLIDER -->
 <div class="main-slider" data-indicators="true">
@@ -123,25 +135,18 @@
 
 <!-- FOOTER  -->
 <footer id="footer"></footer>
+<script type="module">
+const footerHtml = await fetch('footer.html').then(response => response.text());
+document.getElementById('footer').innerHTML = footerHtml;
+</script>
 <!-- END FOOTER -->
 <!-- Script -->
 <!-- Inclure ces scripts dans votre fichier HTML -->
 <div id="script"></div>
 
 <script type="module">
-
-const headHtml = await fetch('head.html').then(response => response.text());
-const navHtml = await fetch('nav.html').then(response => response.text());
-const headerHtml = await fetch('header.html').then(response => response.text());
-const footerHtml = await fetch('footer.html').then(response => response.text());
 const scriptHtml = await fetch('script.html').then(response => response.text());
-
-document.getElementById('head').innerHTML = headHtml;
-document.getElementById('nav').innerHTML = navHtml;
-document.getElementById('header').innerHTML = headerHtml;
-document.getElementById('footer').innerHTML = footerHtml;
 document.getElementById('script').innerHTML = scriptHtml;
-
 </script>
 
 </body>
